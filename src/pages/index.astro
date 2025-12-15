@@ -4,13 +4,17 @@ import PropertyCard from '../components/PropertyCard.astro';
 
 const propiedades = [
   {
-    titulo: "Serena Loft: Naturaleza & Paz",
-    tipo: "Loft (a 6km Centro)",
-    capacidad: "Parejas / Familias",
-    etiqueta: "🌿 Home Office",
-    descripcion: "Tu refugio de paz. Ideal para desconectar o trabajar remoto (WiFi + A/C). Cocina full, lavarropas y acceso 100% autónomo. Seguridad, estacionamiento y piscina compartida.",
-    imagenes: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800", "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"], 
-    link: "https://wa.me/595981000000?text=Hola,%20me%20interesa%20reservar%20Serena%20Loft",
+    titulo: "Serena Loft: Tu Oasis Privado",
+    tipo: "Loft (a 6km del Centro)",
+    capacidad: "Hasta 5 Personas",
+    etiqueta: "🍃 Relax & Desconexión", 
+    descripcion: "Privacidad absoluta y descanso real. Disfrutá de una piscina y espacio de uso exclusivo, sin compartir con nadie. Un espacio moderno pensado para 5 personas, donde tu mascota también es bienvenida 🐾. Cocina equipada, A/A y confort total a minutos del centro.",
+    imagenes: [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800", 
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"
+    ], 
+    linkAirbnb: "https://www.airbnb.com.py/h/serenaloftpy", 
+    numeroWhatsapp: "595984957942",
     tienePiscina: true
   },
   {
@@ -20,7 +24,8 @@ const propiedades = [
     etiqueta: "🏡 Espacio & Relax",
     descripcion: "Entorno semi-rural silencioso a solo 10 min del centro. Cocina equipada, lavarropas, A/A y WiFi. Cochera doble techada, acceso autónomo y piscina para disfrutar.",
     imagenes: ["https://images.unsplash.com/photo-1449156493391-d2cfa28e468b?auto=format&fit=crop&q=80&w=800", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"], 
-    link: "https://wa.me/595981000000?text=Hola,%20me%20interesa%20reservar%20Cabaña%20Don%20Julio",
+    linkAirbnb: "airbnb.com.py/h/serenaloftpy", 
+    numeroWhatsapp: "595984957942",
     tienePiscina: true
   },
   {
@@ -30,8 +35,9 @@ const propiedades = [
     etiqueta: "🌊 Vista & Confort",
     descripcion: "A 3km del centro en barrio residencial seguro. 2 habitaciones, cocina completa, cochera privada y un balcón amplio con vista al río. Ideal familias con niños (Lavadora/Secadora).",
     imagenes: ["https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800", "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=800"], // FOTO PENDIENTE
-    link: "https://wa.me/595981000000?text=Hola,%20me%20interesa%20el%20Depto%20con%20Balcon",
-    tienePiscina: false // <--- ESTO ES LA CLAVE
+    linkAirbnb: "airbnb.com.py/h/serenaloftpy", 
+    numeroWhatsapp: "595984957942",
+    tienePiscina: false
   },
   {
     titulo: "Quinta Don Julio", 
@@ -56,7 +62,7 @@ const propiedades = [
           <span class="font-bold text-xl text-dark tracking-tight">Encar Stays</span>
         </div>
         <div>
-          <a href="https://wa.me/XXXXXXXXX" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg flex items-center gap-2">
+          <a href="https://walink.co/jqq1e0" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg flex items-center gap-2">
             <span>WhatsApp</span>
           </a>
         </div>
@@ -113,8 +119,8 @@ const propiedades = [
               etiqueta={prop.etiqueta}
               descripcion={prop.descripcion}
               imagenes={prop.imagenes}
-              linkAirbnb={prop.link}
-              textoBoton={prop.textoBoton}
+              linkAirbnb={prop.linkAirbnb}
+              numeroWhatsapp={prop.numeroWhatsapp}
               tienePiscina={prop.tienePiscina} 
             />
           ))}

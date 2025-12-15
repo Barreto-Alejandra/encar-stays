@@ -9,8 +9,8 @@ const {
   etiqueta, 
   imagenes, 
   linkAirbnb, 
-  textoBoton = "Ver Disponibilidad",
-  tienePiscina = true // Por defecto asumimos que SÍ tienen (para no romper los anteriores)
+  numeroWhatsapp,
+  tienePiscina = true
 } = Astro.props;
 ---
 
@@ -40,12 +40,29 @@ const {
       {descripcion}
     </p>
     
-    <a 
-      href={linkAirbnb} 
-      target="_blank" 
-      class={`block text-center text-white font-bold py-3 rounded-lg transition-colors shadow-md ${textoBoton.includes("Avísame") ? "bg-slate-400 hover:bg-slate-500 cursor-default" : "bg-dark hover:bg-primary"}`}
-    >
-      {textoBoton}
-    </a>
+    <div class="mt-auto flex flex-col md:flex-row gap-3 w-full">
+    
+      <a 
+        href={linkAirbnb} 
+        target="_blank" 
+        class="flex-1 group flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-[#1e293b] text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200 shadow-lg shadow-indigo-500/20"
+      >
+        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M224 373.12c-25.24-31.67-40.08-59.43-45-83.18-22.55-88 112.61-88 90.06 0-5.45 24.25-20.29 52-45 83.18zm138.15 73.23c-42.06 18.31-83.67-10.88-119.3-50.45 103.9-130.07 46.11-200-18.85-200-54.92 0-85.16 46.51-73.28 100.5 6.93 29.19 25.23 62.39 54.43 99.5-32.53 36.05-60.55 52.69-85.15 54.92-50 7.43-89.11-41.06-71.3-91.09 15.1-39.16 111.72-231.18 115.87-241.56 15.75-30.07 25.56-57.4 59.38-57.4 32.34 0 43.4 25.94 60.37 59.87 36 70.62 89.35 177.48 114.84 239.09 13.16 33.07-1.37 71.29-37.01 86.62z"/>
+        </svg>
+        <span>Reservar</span>
+      </a>
+
+      <button 
+        onclick={`window.open('https://wa.me/${numeroWhatsapp}?text=Hola, me interesa reservar ${titulo}', '_blank')`}
+        class="flex-1 group flex items-center justify-center gap-2 border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold py-3 px-4 rounded-lg transition-all duration-200 cursor-pointer"
+      >
+        <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z"/>
+        </svg>
+        <span>Consultar</span>
+      </button>
+    
+    </div>
   </div>
 </article>
