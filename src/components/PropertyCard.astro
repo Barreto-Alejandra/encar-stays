@@ -1,19 +1,51 @@
 ---
 import GaleriaCarrusel from './GaleriaCarrusel.jsx';
-const { titulo, capacidad, tipo, descripcion, etiqueta, imagenes, linkAirbnb } = Astro.props;
+
+const { 
+  titulo, 
+  capacidad, 
+  tipo, 
+  descripcion, 
+  etiqueta, 
+  imagenes, 
+  linkAirbnb, 
+  textoBoton = "Ver Disponibilidad",
+  tienePiscina = true // Por defecto asumimos que SÍ tienen (para no romper los anteriores)
+} = Astro.props;
 ---
 
 <article class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 overflow-hidden flex flex-col h-full">
   <div class="relative">
-    <div class="absolute top-4 left-4 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">{etiqueta}</div>
+    <div class="absolute top-4 left-4 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm">
+      {etiqueta}
+    </div>
     <GaleriaCarrusel client:visible imagenes={imagenes} />
   </div>
+
   <div class="p-6 flex flex-col flex-grow">
     <h3 class="text-xl font-bold text-dark mb-2">{titulo}</h3>
-    <div class="flex gap-4 text-sm text-gray-500 mb-4 font-medium">
-      <span>👥 {capacidad}</span><span>🏠 {tipo}</span><span class="text-primary">💧 Piscina</span>
+    
+    <div class="flex flex-wrap gap-3 text-sm text-gray-500 mb-4 font-medium">
+      <span class="flex items-center gap-1">👥 {capacidad}</span>
+      <span class="flex items-center gap-1">🏠 {tipo}</span>
+      
+      {tienePiscina ? (
+        <span class="flex items-center gap-1 text-primary font-bold">💧 Piscina</span>
+      ) : (
+        <span class="flex items-center gap-1 text-blue-600 font-bold">🌊 Vista Río</span>
+      )}
     </div>
-    <p class="text-gray-600 text-sm mb-6 flex-grow">{descripcion}</p>
-    <a href={linkAirbnb} target="_blank" class="block text-center bg-dark text-white font-bold py-3 rounded-lg hover:bg-primary transition-colors">Ver Disponibilidad</a>
+
+    <p class="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
+      {descripcion}
+    </p>
+    
+    <a 
+      href={linkAirbnb} 
+      target="_blank" 
+      class={`block text-center text-white font-bold py-3 rounded-lg transition-colors shadow-md ${textoBoton.includes("Avísame") ? "bg-slate-400 hover:bg-slate-500 cursor-default" : "bg-dark hover:bg-primary"}`}
+    >
+      {textoBoton}
+    </a>
   </div>
 </article>
