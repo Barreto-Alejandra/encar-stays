@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+
+const propiedades = [
+  {
+    titulo: "Loft Urbano Moderno",
+    tipo: "Loft",
+    capacidad: "5 Personas",
+    etiqueta: "🐾 Pet Friendly",
+    descripcion: "Espacio moderno ideal para parejas, nómadas y familias pequeñas. Disfruta de aire acondicionado, wifi de alta velocidad y piscina compartida.",
+    imagenes: ["https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800", "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800"], 
+    link: "#" 
+  },
+  {
+    titulo: "Cabaña Familiar Relax",
+    tipo: "Cabaña",
+    capacidad: "7 Personas",
+    etiqueta: "🌳 Relax & Naturaleza",
+    descripcion: "Desconecta en nuestra cabaña rústica diseñada para el descanso. Espacios amplios, parrilla propia y acceso a piscina exclusiva.",
+    imagenes: ["https://images.unsplash.com/photo-1449156493391-d2cfa28e468b?auto=format&fit=crop&q=80&w=800", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"],
+    link: "#"
+  },
+  {
+    titulo: "Quinta Los Suegros", 
+    tipo: "Quinta",
+    capacidad: "15+ Personas",
+    etiqueta: "🎉 Eventos y Grupos",
+    descripcion: "La opción definitiva para grupos grandes. Amplio parque, quincho y piscina de gran tamaño. Privacidad total para disfrutar con toda la familia.",
+    imagenes: ["https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800", "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800"],
+    link: "#"
+  }
+];
+---
+
+<Layout title="Encar Stays | Alquiler por temporada en Encarnación">
+  
+  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <span class="font-bold text-xl text-dark tracking-tight">Encar Stays</span>
+        </div>
+        <div>
+          <a href="https://wa.me/XXXXXXXXX" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-lg flex items-center gap-2">
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-slate-900/40 z-10"></div>
+      
+      <img 
+        src="https://images.unsplash.com/photo-1572331165267-854da2b00cc6?q=80&w=2070&auto=format&fit=crop" 
+        class="absolute inset-0 w-full h-full object-cover animate-pulse-slow"
+        alt="Piscina en Encarnación"
+      />
+      
+      <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16">
+        <h1 class="text-fluid-h1 font-bold text-white mb-6 leading-tight drop-shadow-lg animate-fade-in-up">
+            Tu lugar ideal en <span class="text-primary">Encarnación</span>
+        </h1>
+        <p class="text-fluid-body text-gray-100 mb-8 max-w-2xl mx-auto font-light drop-shadow-md">
+          Alquiler temporal premium: Lofts, Cabañas y Quintas. <br class="hidden md:block"/>
+          <strong>Todos con piscina. Trato directo con sus dueños.</strong>
+        </p>
+        <a href="#propiedades" class="inline-block bg-primary hover:bg-sky-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-transform hover:-translate-y-1 shadow-xl border-2 border-transparent hover:border-white/20">
+            Ver Opciones Disponibles
+        </a>
+      </div>
+    </section>
+
+    <section id="propiedades" class="py-24 bg-gray-50 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-fluid-h2 font-bold text-dark mb-4">Encuentra tu estancia</h2>
+          <p class="text-gray-600 text-lg">Tres estilos únicos para disfrutar el verano paraguayo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {propiedades.map((prop) => (
+            <PropertyCard 
+              titulo={prop.titulo}
+              tipo={prop.tipo}
+              capacidad={prop.capacidad}
+              etiqueta={prop.etiqueta}
+              descripcion={prop.descripcion}
+              imagenes={prop.imagenes}
+              linkAirbnb={prop.link}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-dark">Ubicación Estratégica</h2>
+            <p class="text-gray-600 leading-relaxed text-lg mb-8">
+                Nuestros alojamientos están situados cerca de los puntos más importantes de la ciudad: 
+                la <strong>Playa San José</strong>, la <strong>Costanera de Encarnación</strong> y el 
+                sambódromo. El punto de partida perfecto para tu visita.
+            </p>
+        </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-12 text-center border-t border-slate-800">
+    <p class="opacity-60 text-sm">© 2025 Encar Stays.</br> Encarnación - Paraguay </p>
+  </footer>
+</Layout>
