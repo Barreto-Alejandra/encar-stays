@@ -7,7 +7,8 @@ interface Props {
 
 const { 
     title, 
-    description = "Alquileres temporales en Encarnación, Paraguay. Departamentos, Lofts y Quintas con piscina. Ubicación estratégica cerca de la playa y el centro. Reservá directo sin comisiones.",
+    // AQUÍ ACTUALIZAMOS TU DESCRIPCIÓN GANADORA 👇
+    description = "Elige tu espacio ideal: Cabaña, Quinta, Loft o Departamento privado. Disfruta de alojamientos equipados y únicos en el corazón de Encarnación. ¡Reserva tu estadía!",
     image = "/images/og-social.jpg"
 } = Astro.props;
 
@@ -26,7 +27,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-54JXSP7');
         </script>
-        <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
