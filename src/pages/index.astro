@@ -10,18 +10,18 @@ const propiedades = [
     etiqueta: "🍃 Relax & Desconexión", 
     descripcion: "Privacidad absoluta y descanso real. Disfrutá de una piscina y espacio de uso exclusivo, sin compartir con nadie. Un espacio moderno pensado para 5 personas, donde tu mascota también es bienvenida 🐾. Cocina equipada, A/A y confort total a minutos del centro.",
     imagenes: [
-        "/images/loft/1.jpg",
-        "/images/loft/10.jpg",
-        "/images/loft/9.jpg",
-        "/images/loft/11.jpg",
-        "/images/loft/2.jpg",
-        "/images/loft/3.jpg",
-        "/images/loft/4.jpg",
-        "/images/loft/5.jpg",
-        "/images/loft/6.jpg",
-        "/images/loft/7.jpg",
-        "/images/loft/8.jpg",
-        "/images/loft/12.jpg"
+        "/images/loft/1.webp",
+        "/images/loft/10.webp",
+        "/images/loft/9.webp",
+        "/images/loft/11.webp",
+        "/images/loft/2.webp",
+        "/images/loft/3.webp",
+        "/images/loft/4.webp",
+        "/images/loft/5.webp",
+        "/images/loft/6.webp",
+        "/images/loft/7.webp",
+        "/images/loft/8.webp",
+        "/images/loft/12.webp"
     ], 
     linkAirbnb: "https://www.airbnb.com.py/h/serenaloftpy", 
     numeroWhatsapp: "595984957942",
@@ -34,18 +34,18 @@ const propiedades = [
     etiqueta: "🏡 Espacio & Relax",
     descripcion: "Entorno semi-rural silencioso a solo 10 min del centro. Cocina equipada, lavarropas, A/A y WiFi. Estacionamiento para 2 vehículos, acceso autónomo y piscina para disfrutar.",
     imagenes: [
-      "/images/cabana/3.jpg",
-      "/images/cabana/1.jpg",
-      "/images/cabana/2.jpg",
-      "/images/cabana/8.jpg",
-      "/images/cabana/7.jpg",
-      "/images/cabana/4.jpg",
-      "/images/cabana/5.jpg",
-      "/images/cabana/9.jpg",
-      "/images/cabana/10.jpg",
-      "/images/cabana/11.jpg",
-      "/images/cabana/12.jpg",
-      "/images/cabana/6.jpg" 
+      "/images/cabana/3.webp",
+      "/images/cabana/1.webp",
+      "/images/cabana/2.webp",
+      "/images/cabana/8.webp",
+      "/images/cabana/7.webp",
+      "/images/cabana/4.webp",
+      "/images/cabana/5.webp",
+      "/images/cabana/9.webp",
+      "/images/cabana/10.webp",
+      "/images/cabana/11.webp",
+      "/images/cabana/12.webp",
+      "/images/cabana/6.webp" 
     ], 
     linkAirbnb: "https://www.airbnb.com.py/rooms/1555057080848369300?check_in=2026-03-10&check_out=2026-03-14&search_mode=regular_search&amenities%5B%5D=7&amenities%5B%5D=51&source_impression_id=p3_1765819973_P3IQ4F3X9Ue9EYPP&previous_page_section_name=1000&federated_search_id=f51d3709-cf07-4951-be0c-060a922f7695", 
     numeroWhatsapp: "595984957942",
@@ -58,17 +58,17 @@ const propiedades = [
     etiqueta: "🌊 Vista & Confort",
     descripcion: "A 3km del centro en barrio residencial seguro. 2 habitaciones, cocina completa, estacionamiento privado y un balcón amplio con vista al río.",
     imagenes: [
-      "/images/departamentito/1.jpg",
-      "/images/departamentito/2.jpg",
-      "/images/departamentito/3.jpg",
-      "/images/departamentito/4.jpg",
-      "/images/departamentito/5.jpg",
-      "/images/departamentito/6.jpg",
-      "/images/departamentito/7.jpg",
-      "/images/departamentito/8.jpg",
-      "/images/departamentito/9.jpg",
-      "/images/departamentito/10.jpg",
-      "/images/departamentito/11.jpg"
+      "/images/departamentito/1.webp",
+      "/images/departamentito/2.webp",
+      "/images/departamentito/3.webp",
+      "/images/departamentito/4.webp",
+      "/images/departamentito/5.webp",
+      "/images/departamentito/6.webp",
+      "/images/departamentito/7.webp",
+      "/images/departamentito/8.webp",
+      "/images/departamentito/9.webp",
+      "/images/departamentito/10.webp",
+      "/images/departamentito/11.webp"
     ],
     linkAirbnb: "https://www.airbnb.com.py/rooms/1164618297235181264?source_impression_id=p3_1765820039_P3Ne6IW-BPIUtrqV", 
     numeroWhatsapp: "595984957942",
@@ -81,7 +81,7 @@ const propiedades = [
     etiqueta: "🚀 Próximamente",
     descripcion: "Estamos preparando un nuevo espacio. Con quincho renovado y una gran piscina. ¡Muy pronto disponible!",
     imagenes: [
-      "/images/quinta/2.jpg",
+      "/images/quinta/2.webp",
     ], 
     numeroWhatsapp: "595984957942",
     tienePiscina: true
@@ -109,15 +109,21 @@ const propiedades = [
 <main>
     <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20">
       
-      <img 
-        src="/images/hero-ia.png" 
-        class="absolute inset-0 w-full h-full object-cover" 
+      <img
+        src="/images/hero-ia.webp"
+        srcset="/images/hero-ia-mobile.webp 1100w, /images/hero-ia.webp 2200w"
+        sizes="100vw"
+        width="2200"
+        height="1200"
+        fetchpriority="high"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover"
         alt="Mapa ilustrado de Encarnación"
       />
       
       <div class="relative z-20 px-4 w-full max-w-4xl mx-auto">
         
-        <div class="bg-white/75 backdrop-blur-sm border border-white/50 shadow-2xl rounded-3xl p-8 md:p-12 text-center">
+        <div class="reveal bg-white/75 backdrop-blur-sm border border-white/50 shadow-2xl rounded-3xl p-8 md:p-12 text-center">
           
           <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
             Tu lugar ideal en <span class="text-blue-600">Encarnación, Paraguay</span>
@@ -146,7 +152,7 @@ const propiedades = [
           <p class="text-gray-600 text-lg">Cuatro opciones únicas para disfrutar de Encarnación.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {propiedades.map((prop) => (
             <PropertyCard 
               titulo={prop.titulo}
@@ -165,7 +171,7 @@ const propiedades = [
     </section>
 
     <section class="py-20 bg-white border-t border-gray-100">
-        <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="reveal max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-6 text-dark">Cerca de la acción, lejos del ruido...</h2>
             <p class="text-gray-600 leading-relaxed text-lg mb-8">
               Disfrutá de la combinación perfecta: la tranquilidad de una zona residencial con la cercanía que necesitás. Nuestros alojamientos se encuentran a solo minutos en auto del corazón de Encarnación, la Playa San José y el Sambódromo. 
@@ -175,6 +181,54 @@ const propiedades = [
   </main>
 
   <footer class="bg-dark text-white py-12 text-center border-t border-slate-800">
-    <p class="opacity-60 text-sm">© 2025 Encar Stays.</br> Encarnación - Paraguay </p>
+    <p class="opacity-60 text-sm">© 2026 Encar Stays.<br /> Encarnación - Paraguay </p>
   </footer>
 </Layout>
+
+<!-- Animaciones de entrada al hacer scroll (con degradación segura sin JS) -->
+<style is:global>
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  /* Entrada escalonada de las tarjetas */
+  .js .cards-grid > .reveal:nth-child(2) { transition-delay: 0.08s; }
+  .js .cards-grid > .reveal:nth-child(3) { transition-delay: 0.16s; }
+  .js .cards-grid > .reveal:nth-child(4) { transition-delay: 0.24s; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length || !('IntersectionObserver' in window)) {
+      items.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.1 }
+    );
+    items.forEach((el) => io.observe(el));
+  })();
+</script>
