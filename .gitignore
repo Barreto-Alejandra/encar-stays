@@ -1,0 +1,26 @@
+# build output
+dist/
+
+# generated types / cache de Astro
+.astro/
+
+# dependencias
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# entornos
+.env
+.env.*
+!.env.example
+
+# editor / sistema operativo
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+Thumbs.db
